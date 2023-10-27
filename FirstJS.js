@@ -8,7 +8,7 @@
     };
 
     // load lrc file
-    const res = await fetch(BASE_URL + '/LRC/MikuLRC.lrc');
+    const res = await fetch(BASE_URL + "/LRC/MikuLRC.lrc");
     const lrc = await res.text();
 
     const lyrics = parseLyric(lrc);
