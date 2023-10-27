@@ -1,7 +1,7 @@
 !async function main() {
     "use strict";
     const BASE_URL = "https://raw.githubusercontent.com/XxKillerDemonxX/XxKillerDemonxX.github.io/main";
-
+    alert("fjsdaklfja");
     const dom = {
         lyric: document.querySelector(".lyric"),
         player: document.querySelector(".player")
