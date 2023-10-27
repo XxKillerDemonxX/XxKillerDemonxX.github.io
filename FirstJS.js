@@ -1,6 +1,6 @@
 !async function main() {
     "use strict";
-    const BASE_URL = "https://raw.githubusercontent.com/mcanam/assets/main/liricle-demo/";
+    const BASE_URL = "https://raw.githubusercontent.com/XxKillerDemonxX/XxKillerDemonxX.github.io/main";
 
     const dom = {
         lyric: document.querySelector(".lyric"),
@@ -8,12 +8,12 @@
     };
 
     // load lrc file
-    const res = await fetch(BASE_URL + '/MikuLRC.lrc');
+    const res = await fetch(BASE_URL + '/LRC/MikuLRC.lrc');
     const lrc = await res.text();
 
     const lyrics = parseLyric(lrc);
     alert(lyrics);
-    dom.player.src = BASE_URL + "/MikuMp3.mp3";
+    dom.player.src = BASE_URL + "/Audio/MikuMp3.mp3";
 
     dom.player.ontimeupdate = () => {
         const time = dom.player.currentTime;
