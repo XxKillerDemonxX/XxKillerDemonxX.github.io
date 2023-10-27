@@ -1,7 +1,44 @@
+const playButton = document.getElementById("button");
+const audio = document.getElementById("audio");
+const time = document.querySelector(".time");
+const shake = document.getElementById("shaker");
+
+function playAudio()
+{
+    if (audio.paused)
+    {
+    audio.play();
+    playButton.classList = 'paused';
+
+    }
+    else
+    {
+    audio.pause();
+    playButton.classList = 'play';
+
+    }
+}
+playButton.addEventListener('click', playAudio);
+
+
+
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    return formattedTime;
+}
+
+function currentTime()
+{
+    time.innerText = formatTime(audio.currentTime);
+}
+audio.addEventListener('timeupdate', currentTime);
+
 !async function main() {
     "use strict";
     const BASE_URL = "https://raw.githubusercontent.com/XxKillerDemonxX/XxKillerDemonxX.github.io/main";
-    
     const dom = {
         lyric: document.querySelector(".lyric"),
         player: document.querySelector(".player")
@@ -12,8 +49,8 @@
     const lrc = await res.text();
 
     const lyrics = parseLyric(lrc);
-    // alert(lyrics);
-    dom.player.src = BASE_URL + "/Audio/MikuMp3.mp3";
+
+    //dom.player.src = "./audio.mp3";
 
     dom.player.ontimeupdate = () => {
         const time = dom.player.currentTime;
@@ -25,6 +62,8 @@
     };
 
 }();
+
+
 function parseLyric(lrc) {
     // will match "[00:00.00] ooooh yeah!"
     // note: i use named capturing group

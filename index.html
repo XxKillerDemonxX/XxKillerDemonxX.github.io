@@ -1,82 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            .box
-            {
-                text-align: center;
-                font-size: 50px;               
-            }
-            .blink-bg
-            {
-		        color: #000000;
-                animation: blinkingBackground 2s infinite;
-            }
-          /*  .player 
-            {
-                width: 100%;
-                max-width: 300px;
-            }
-            .lyric 
-            {
-                font-size: 2rem;
-                font-weight: bolder;
-                line-height: 1.5;
-                text-align: center;
-                text-transform: uppercase;
-                max-width: 300px;
-                margin-top: 40px;
-            }*/
-            @keyframes blinkingBackground
-            {
-                0%      { background-color: #45818e;}
-                50%		{ background-color: #7abcdc;}
-                100%	{ background-color: #45818e;}
-            }
-            .shake
-            {
-                animation: ShakeAnim 0.939s infinite;
-            }
-            @keyframes ShakeAnim
-            {
-                0%      { transform: translate(0px, 0px) rotate(10deg); }
-                50%     { transform: translate(0px, 0px) rotate(-10deg); }
-                100%    { transform: translate(0px, 0px) rotate(10deg); }
-            }
-            body
-            {
-                overflow: hidden;
-            }    
-        </style>
-
+        <link rel=icon href=PNG/NoBGMiku.png sizes="16x16" type="image/png">
+        <link rel="stylesheet" href="FirstCss.css">
         <title>
             MIKU
         </title>
-        <link rel=icon href=PNG/NoBGMiku.png sizes="16x16" type="image/png">
-        <script src="FirstJS.js"></script>
+        
+        
     </head>
     <body class = "blink-bg">
 
-        <div class = "box">
+        <div class = "word">
             <p>HATSUNE MIKU</p>
         </div>
 
         <center>
-        <audio class="player" controls autoplay loop>
-        <!--<source src="Audio/MikuMp3.mp3" type="audio/mpeg">-->
-        </audio>
         
+        <audio id="audio"class="player" src="Audio/MikuMp3.mp3"></audio>
         
-        <div class="lyric"></div>
+        <section class="box">
+            <div>
+                <button id="button" class="play"></button>
+                <span class="time">00:00</span>
+                <div class="lyric"></div>
 
-        <br>
-        <br>
-        <div class = "shake">
+            </div>
+        </section> 
+        <div id="shaker" class = "shake">
         <img src="PNG/NoBGMiku.png" alt="Miku">
         </div>
         </center>
         
-
+        <script src="FirstJS.js"></script>
     </body>
 </html>
 

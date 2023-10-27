@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas, sans-serif;
+}
+html, body
+{
+    width: 100%;
+    height: 100%;
+    background: #2a2a2a;
+    overflow: hidden;
+}
+.box
+{
+    border-radius: 50px;
+    background-color: #4e70a1;
+    width: 500px;
+    height: 250px;
+    box-shadow: 0px 15px 15px rgba(0,0,0,.3);
+    position: relative;
+    top: 50%;
+    /*left: 50%;
+    transform: translate(-50%, -50%);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box > svg
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.texts 
+{
+    width: 50%;
+    height:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lyric
+{
+    font-size: 1.5em;
+    transition: .5s;
+    width: 100%;
+    background-size: 100% 1100%;
+    background-image: linear-gradient(rgb(62, 55, 158), cyan);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    animation: gradient 10s linear infinite;
+}
+@keyframes linearGradient{
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 0%; }
+}
+.play
+{
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    box-sizing: border-box;
+    width: 7.5px;
+    height: 7.5px;
+    border-width: 15px 0px 15px 22.5px;
+    background-color: #4e70a1;
+    cursor: pointer;
+    border-color: transparent transparent transparent #61cf87;
+}
+.paused {
+    border-style: double;
+    border-width: 0px 0px 0px 22.5px;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 7.5px;
+    height: 28px;
+    background-color: #4e70a1;
+    border-color: transparent transparent transparent #61cf87;
+}
+.time
+{
+    position: absolute;
+    left: 44%;
+    top: 15%;
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, .5);
+}
+.word
+{
+    text-align: center;
+    font-size: 50px;               
+}
+
+.blink-bg
+{
+    color: #000000;
+    animation: blinkingBackground 2s infinite;
+}
+@keyframes blinkingBackground
+{
+    0%      { background-color: #45818e;}
+    50%		{ background-color: #7abcdc;}
+    100%	{ background-color: #45818e;}
+}
+.shake
+{
+    animation: ShakeAnim 0.939s infinite;
+}
+@keyframes ShakeAnim
+{
+    0%      { transform: translate(0px, 0px) rotate(10deg); }
+    50%     { transform: translate(0px, 0px) rotate(-10deg); }
+    100%    { transform: translate(0px, 0px) rotate(10deg); }
+}
