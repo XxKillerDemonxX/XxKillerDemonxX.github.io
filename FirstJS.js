@@ -1,7 +1,7 @@
 !async function main() {
     "use strict";
     const BASE_URL = "https://raw.githubusercontent.com/XxKillerDemonxX/XxKillerDemonxX.github.io/main";
-    alert("fjsdaklfja");
+    
     const dom = {
         lyric: document.querySelector(".lyric"),
         player: document.querySelector(".player")
@@ -12,7 +12,7 @@
     const lrc = await res.text();
 
     const lyrics = parseLyric(lrc);
-    alert(lyrics);
+    // alert(lyrics);
     dom.player.src = BASE_URL + "/Audio/MikuMp3.mp3";
 
     dom.player.ontimeupdate = () => {
