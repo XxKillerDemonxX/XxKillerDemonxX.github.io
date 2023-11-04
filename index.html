@@ -1,38 +1,35 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel=icon href=PNG/NoBGMiku.png sizes="16x16" type="image/png">
-        <link rel="stylesheet" href="FirstCss.css">
-        <title>
-            MIKU
-        </title>
-        
-        
-    </head>
-    <body class = "blink-bg">
 
-        <div class = "word">
-            <p>HATSUNE MIKU</p>
-        </div>
 
-        <center>
-        
-        <audio id="audio"class="player" src="Audio/MikuMp3.mp3"></audio>
-        
-        <section class="box">
-            <div>
-                <button id="button" class="play"></button>
-                <span class="time">00:00</span>
-                <div class="lyric"></div>
+<head>
+    <title>
+        Miku Song Project
+    </title>
+    <link rel="stylesheet" href="FirstCss.css">
+</head>
+<body>
 
-            </div>
-        </section> 
-        <div id="shaker" class = "shake">
-        <img src="PNG/NoBGMiku.png" alt="Miku">
-        </div>
-        </center>
-        
-        <script src="FirstJS.js"></script>
-    </body>
-</html>
+    <section class="sidebar">
+        <!--<button class="songButton" data-mp3="MikuMp3" data-lrc="">Miku</button>
+        <button class="songButton" data-mp3="WorldIsMineMp3" data-lrc="">World Is Mine</button>-->
+    </section>
 
+    <section class="title">
+        <p>MIKU HATSUNE</p>
+    </section>
+   
+    <p class="songName">Miku</p>
+    <div class="container">
+        <img id="imageSource" src="Images/Miku.png">
+    </div>
+    <input class="progressBar" type="range" min="1" max = "15000" value ="1">
+    <div class="playButton"></div>
+    <button class="forward">⏭</button>
+    <button class="backward">⏮</button>
+    
+
+    <audio class="Audio">
+        <source id="audioSource" src="AUdio/MikuMp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="FirstJS.js"></script>
+</body>
