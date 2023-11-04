@@ -15,7 +15,7 @@ var mp3 = "";
 var lrc = "";
 var image = "";
 
-
+//fdsa
 
 
 //import songs from "./Songs.js"; Note: Should update code later to have songs to be imported from Songs.js
@@ -64,6 +64,14 @@ AudioPlayer.addEventListener("timeupdate", function() {
         var color = 'linear-gradient(90deg, rgb' + color2 + x* 100/15000 + '%, rgb(214,214,214)' + x* 100/15000 + '%)';
         progressBar.style.background = color;
     }
+
+    if (AudioPlayer.paused) {
+        playButton.src = "Images/PlayButton.png"; 
+    }
+    else {
+        playButton.src = "Images/PauseButton.png";
+    }
+
 });
 //change current time based on progress bar, ie. dragging bar to change current time in song
 progressBar.addEventListener("input", function(event) {
@@ -147,14 +155,16 @@ function PlayPause()
 {
     if (AudioPlayer.paused) {
     try {
-    AudioPlayer.play(); 
+    AudioPlayer.play();
+    playButton.src = "Images/PauseButton.png"; 
     //console.log("caught");
     } catch (error) {
-        console.error("error caught:", error.nmessage);
+        console.error("error caught:", error.message);
     }
     }
     else {
     AudioPlayer.pause();
+    playButton.src = "Images/PlayButton.png";
     }
 }
 playButton.addEventListener('click', PlayPause)
