@@ -64,7 +64,7 @@ AudioPlayer.addEventListener("timeupdate", function() {
         var color = 'linear-gradient(90deg, rgb' + color2 + x* 100/15000 + '%, rgb(214,214,214)' + x* 100/15000 + '%)';
         progressBar.style.background = color;
     }
-
+    //fdsfd
     if (AudioPlayer.paused) {
         playButton.src = "Images/PlayButton.png"; 
     }
